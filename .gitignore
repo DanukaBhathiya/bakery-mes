@@ -1,0 +1,23 @@
+# Local environment / secrets
+.env
+.env.*
+config/db.local.php
+
+# Dependencies
+vendor/
+
+# OS / editor
+Thumbs.db
+Desktop.ini
+.DS_Store
+*.swp
+.idea/
+.vscode/
+
+# Local database dumps
+*.sql.gz
+*.dump
+backup/
+
+# PHP / server
+*.log
