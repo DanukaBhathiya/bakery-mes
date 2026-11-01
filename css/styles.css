@@ -1,0 +1,207 @@
+/* Single stylesheet for all Bakery MES pages */
+
+:root {
+    --bg: #f7f1e8;
+    --surface: #fffaf3;
+    --ink: #2c2118;
+    --muted: #6d5b4b;
+    --accent: #b45309;
+    --accent-dark: #92400e;
+    --line: #e7d7c5;
+    --ok: #166534;
+    --danger: #991b1b;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--ink);
+    background:
+        radial-gradient(circle at top left, #ffe8c8 0, transparent 40%),
+        linear-gradient(180deg, #fbf6ef 0%, var(--bg) 100%);
+    min-height: 100vh;
+}
+
+a {
+    color: var(--accent-dark);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.site-header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 1rem 1.5rem;
+    background: rgba(255, 250, 243, 0.92);
+    border-bottom: 1px solid var(--line);
+}
+
+.brand a {
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: var(--ink);
+    text-decoration: none;
+}
+
+.site-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.9rem;
+    align-items: center;
+}
+
+.nav-user {
+    color: var(--muted);
+    font-size: 0.95rem;
+}
+
+.site-main {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 2rem 1.25rem 3rem;
+}
+
+.site-footer {
+    text-align: center;
+    color: var(--muted);
+    padding: 1.5rem;
+    border-top: 1px solid var(--line);
+    font-size: 0.9rem;
+}
+
+h1 {
+    margin-top: 0;
+    margin-bottom: 0.4rem;
+}
+
+.lead {
+    color: var(--muted);
+    margin-bottom: 1.5rem;
+}
+
+.panel {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 1.25rem;
+}
+
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.data-table th,
+.data-table td {
+    padding: 0.75rem 0.9rem;
+    text-align: left;
+    border-bottom: 1px solid var(--line);
+}
+
+.data-table th {
+    background: #f3e7d8;
+    font-weight: 600;
+}
+
+.data-table tr:last-child td {
+    border-bottom: none;
+}
+
+.form-stack {
+    display: grid;
+    gap: 1rem;
+    max-width: 420px;
+}
+
+label {
+    display: grid;
+    gap: 0.35rem;
+    font-weight: 600;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="number"],
+input[type="date"],
+select {
+    width: 100%;
+    padding: 0.65rem 0.75rem;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    font: inherit;
+    background: #fff;
+}
+
+button,
+.button {
+    display: inline-block;
+    border: none;
+    border-radius: 8px;
+    padding: 0.7rem 1.1rem;
+    background: var(--accent);
+    color: #fff;
+    font: inherit;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+button:hover,
+.button:hover {
+    background: var(--accent-dark);
+    text-decoration: none;
+}
+
+.message {
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+.message-error {
+    background: #fee2e2;
+    color: var(--danger);
+}
+
+.message-success {
+    background: #dcfce7;
+    color: var(--ok);
+}
+
+.login-wrap {
+    max-width: 420px;
+    margin: 3rem auto;
+}
+
+.status-pill {
+    display: inline-block;
+    padding: 0.15rem 0.55rem;
+    border-radius: 999px;
+    background: #f3e7d8;
+    font-size: 0.85rem;
+}
+
+@media (max-width: 640px) {
+    .site-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .data-table {
+        display: block;
+        overflow-x: auto;
+    }
+}
